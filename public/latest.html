@@ -1,0 +1,11 @@
+<div class="main_body">
+  <div class="header">
+    <div class="header_title">LATEST POSTS</div>
+  </div>
+  <div class="latest_container">
+      <div class="latest_section" ng-repeat="post in latest">
+        <div class="latest_topic"><span class="runin">topic:&ensp;</span> <a class="latest_link" ng-href="/topic/{{post.topic.id}}">{{post.topic.name}}</a>&emsp;<span class="runin">posted by </span><a class="latest_link" ng-href="/user/{{post.user.id}}">{{post.user.name}}</a> on {{post.createdAt | date:'medium'}}</div>
+        <div class="latest_message" ng-bind-html="post.body"></div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Message-Bored</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Holtwood+One+SC|Poppins" rel="stylesheet">
+  <base href="/">
+</head>
+<body ng-app="myApp">
+<div class='banner' ng-controller="NavigationController">
+  <span class='banner_title'>Wordsmith</span>
+  <span ng-show="username" class="ng-hide welcome">Welcome {{username}}</span>
+  <div class="login">
+    <button class="banner_button" ng-show="username" class="ng-hide" ng-click="logoutUser()">Logout</button>
+    <input class='banner_input' ng-show="!username" type="text" placeholder="username" ng-model="user.username">
+    <input class='banner_input' ng-show="!username" type="password" placeholder="password" ng-model="user.password">
+    <button class="banner_button" ng-show="!username" ng-click="loginUser()">Login</button>
+    <button class="banner_button" ng-click="loadCreateUser()">Register</button>
+  </div>
+</div>
+  <div class='body_content'>
+    <div class='sidebar'>
+        <div ng-controller="NavigationController">
+          <div class="nav_link"><a ng-href="/latest">Latest Posts</a></div>
+          <div class="nav_link"><a ng-href="/userHome">My Posts</a></div>
+          <div class="nav_link"><a ng-href="/users">All Users</a></div>
+        </div>
+
+        <div ng-controller="TopicsController">
+          <h3 class="topic_head">TOPICS</h3>
+          <div class="topic_container">
+            <div class="topic_list" ng-repeat="topic in topics | orderBy : 'name' ">
+              <div class="topic_link">
+                <a ng-href="/topic/{{topic.id}}">{{topic.name}}</a>
+              </div>
+            </div>
+          </div>
+          <input class='topic_input' type="text" placeholder="new topic" ng-model="topic" />
+          <button class='topic_button' ng-click="createTheTopic()">Create</button>
+        </div>
+    </div>
+    <div ng-view></div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-sanitize.js"></script>
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/constants.js"></script>
+  <script src="/scripts/services.js"></script>
+  <script src="/scripts/servicesTopics.js"></script>
+  <script src="/scripts/controllers/home.controller.js"></script>
+  <script src="/scripts/controllers/latest.controller.js"></script>
+  <script src="/scripts/controllers/mainHome.controller.js"></script>
+  <script src="/scripts/controllers/message.controller.js"></script>
+  <script src="/scripts/controllers/navigation.controller.js"></script>
+  <script src="/scripts/controllers/newAccount.controller.js"></script>
+  <script src="/scripts/controllers/topics.controller.js"></script>
+  <script src="/scripts/controllers/userHome.controller.js"></script>
+  <script src="/scripts/controllers/users.controller.js"></script>
+</body>
+</html>

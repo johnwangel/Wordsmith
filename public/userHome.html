@@ -1,0 +1,14 @@
+<div class="main_body">
+  <div class="header">
+    <div class="header_title">Posts from {{userData.name}}</div>
+    <div class="header_subtitle"><span class="runin">member since:</span> {{userData.createdAt | date:'longDate'}}</div>
+  </div>
+
+  <div class="mypost_container">
+      <div class="mypost_section" ng-repeat="message in userData.messages">
+        <div class="latest_topic"><span class="runin">topic:</span> <a class="latest_link" ng-href="/topic/{{message.topic.id}}">{{message.topic.name}}</a></div>
+
+        <div class="latest_message" ng-bind-html="message.body"><span class="runin">message:</span></div>
+      </div>
+  </div>
+</div>

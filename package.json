@@ -1,0 +1,30 @@
+{
+  "name": "message_bored",
+  "version": "1.0.0",
+  "description": "Angular 1.x Exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnwangel/Message-Bored.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnwangel/Message-Bored/issues"
+  },
+  "homepage": "https://github.com/johnwangel/Message-Bored#readme",
+  "dependencies": {
+    "angular": "^1.6.5",
+    "angular-router": "0.0.2",
+    "angular-sanitize": "^1.6.5",
+    "bcrypt": "^1.0.2",
+    "connect-redis": "^3.3.0",
+    "express-session": "^1.15.5",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "redis": "^2.8.0"
+  }
+}
